@@ -3,13 +3,13 @@
 	"id": "client-side-give",
 	"version": "${version}",
 	"name": "Client Side Give",
-	"description": "Use /clientgive to give yourself a clientside item!",
+	"description": "Use /clientgive to give yourself a client side item!",
 	"authors": [
 		"Penpen"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"sources": "https://github.com/penpen-uwu/client-side-give"
 	},
 	"license": "CC0-1.0",
 	"icon": "assets/client-side-give/icon.png",
