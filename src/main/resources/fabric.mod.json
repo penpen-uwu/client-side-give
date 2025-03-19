@@ -8,12 +8,12 @@
 		"Penpen"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/penpen-uwu/client-side-give"
+		"sources": "https://github.com/penpen-uwu/client-side-give",
+		"issues": "https://github.com/penpen-uwu/client-side-give/issues"
 	},
 	"license": "MIT",
 	"icon": "assets/client-side-give/icon.png",
-	"environment": "*",
+	"environment": "client",
 	"entrypoints": {
 		"client": [
 			"penpen.clientsidegive.ClientSideGiveClient"
@@ -22,7 +22,6 @@
 	"depends": {
 		"fabricloader": ">=0.16.10",
 		"minecraft": "~1.21.4",
-		"java": ">=21",
 		"fabric-api": "*"
 	}
 }
