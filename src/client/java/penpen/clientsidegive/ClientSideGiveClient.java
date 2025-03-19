@@ -1,23 +1,32 @@
 package penpen.clientsidegive;
 
+import com.mojang.brigadier.arguments.IntegerArgumentType;
 import net.fabricmc.api.ClientModInitializer;
-import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
+import net.fabricmc.fabric.api.client.command.v2.ClientCommandManager;
+import net.fabricmc.fabric.api.client.command.v2.ClientCommandRegistrationCallback;
+import net.minecraft.command.argument.ItemStackArgumentType;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.server.command.CommandManager;
-import net.minecraft.text.Text;
 
 public class ClientSideGiveClient implements ClientModInitializer {
-	@Override
-	public void onInitializeClient() {
-		CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
-			dispatcher.register(CommandManager.literal("test_command").executes(context -> {
-				context.getSource().sendFeedback(() -> Text.literal("Called /test_command."), false);
-				context.getSource().getPlayer().getInventory().offer(new ItemStack(Items.DIAMOND, 1), false);
-				return 1;
-			}));
-		});
-	}
-
+    @Override
+    public void onInitializeClient() {
+        ClientCommandRegistrationCallback.EVENT.register((dispatcher, registryAccess) -> {
+            dispatcher.register(ClientCommandManager.literal("clientgive")
+                    .then(ClientCommandManager.argument("item", ItemStackArgumentType.itemStack(registryAccess))
+                            .executes(context -> {
+                                ItemStack itemStack = ItemStackArgumentType.getItemStackArgument(context, "item").createStack(1, false);
+                                context.getSource().getPlayer().getInventory().offer(itemStack, false);
+                                return 1;
+                            })
+                            .then(ClientCommandManager.argument("count", IntegerArgumentType.integer(1))
+                                    .executes(context -> {
+                                        ItemStack itemStack = ItemStackArgumentType.getItemStackArgument(context, "item").createStack(IntegerArgumentType.getInteger(context, "count"), false);
+                                        context.getSource().getPlayer().getInventory().offer(itemStack, false);
+                                        return 1;
+                                    })
+                            )
+                    )
+            );
+        });
+    }
 }
-

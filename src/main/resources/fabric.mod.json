@@ -3,7 +3,7 @@
 	"id": "client-side-give",
 	"version": "${version}",
 	"name": "Client Side Give",
-	"description": "use /give anywhere",
+	"description": "Use /clientgive to give yourself a clientside item!",
 	"authors": [
 		"Penpen"
 	],
@@ -15,26 +15,14 @@
 	"icon": "assets/client-side-give/icon.png",
 	"environment": "*",
 	"entrypoints": {
-		"main": [
-			"penpen.clientsidegive.ClientSideGive"
-		],
 		"client": [
 			"penpen.clientsidegive.ClientSideGiveClient"
 		]
 	},
-	"mixins": [
-		"client-side-give.mixins.json",
-		{
-			"config": "client-side-give.client.mixins.json",
-			"environment": "client"
-		}
-	],
 	"depends": {
 		"fabricloader": ">=0.16.10",
 		"minecraft": "~1.21.4",
 		"java": ">=21",
 		"fabric-api": "*"
-	},
-	"suggests": {
 	}
 }
