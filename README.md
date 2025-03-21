@@ -8,6 +8,3 @@ You can use [item components](https://minecraft.wiki/w/Data_component_format#Lis
 
 ### Note
 Use this on servers at your own risk! Things like placing client side blocks then jumping onto them may trigger servers' anticheats
-
-### Download
-Go to https://github.com/penpen-uwu/client-side-give/releases and choose the version you want, and download the .jar
