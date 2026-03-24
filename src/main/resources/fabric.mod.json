@@ -9,7 +9,8 @@
 	],
 	"contact": {
 		"sources": "https://github.com/penpen-uwu/client-side-give",
-		"issues": "https://github.com/penpen-uwu/client-side-give/issues"
+		"issues": "https://github.com/penpen-uwu/client-side-give/issues",
+		"homepage": "https://modrinth.com/mod/quit-from-game-menu"
 	},
 	"license": "MIT",
 	"icon": "assets/client-side-give/icon.png",
@@ -20,8 +21,8 @@
 		]
 	},
 	"depends": {
-		"fabricloader": ">=0.16.10",
-		"minecraft": ">=1.21.5",
-		"fabric-api": "*"
+		"fabricloader": ">=0.18.4",
+		"minecraft": ">=26.1",
+		"fabric-api": ">=0.144.0"
 	}
 }
